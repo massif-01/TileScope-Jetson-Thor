@@ -1,0 +1,41 @@
+{
+  "schema": "tilescope.model.v1",
+  "model_id": "smollm2-1.7b-instruct",
+  "display_name": "SmolLM2-1.7B-Instruct",
+  "origin": {
+    "kind": "huggingface",
+    "repo_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "revision": "31b70e2e869a7173562077fd711b654946d38674"
+  },
+  "expected_architectures": [
+    "LlamaForCausalLM"
+  ],
+  "storage": {
+    "kind": "safetensors_single",
+    "weights": [
+      "model.safetensors"
+    ],
+    "sha256": {
+      "model.safetensors": "f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8"
+    }
+  },
+  "precision": {
+    "runtime_dtype": "bfloat16",
+    "quantization": "none"
+  },
+  "tokenizer": {
+    "source": "checkpoint",
+    "template_source": "tokenizer_config.json"
+  },
+  "deep_adapter": {
+    "id": "dense_rms_linear.v1",
+    "norm_semantics": "standard_rmsnorm",
+    "epsilon_source": "config.rms_norm_eps",
+    "logical_norm_path": "layers.0.input_layernorm",
+    "norm_weight_key": "model.layers.0.input_layernorm.weight",
+    "logical_linear_path": "layers.0.mlp.down_proj",
+    "linear_weight_key": "model.layers.0.mlp.down_proj.weight",
+    "shape_source": "actual_weights_and_tensors",
+    "rows": 2
+  }
+}

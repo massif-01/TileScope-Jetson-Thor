@@ -1,0 +1,224 @@
+{
+  "repository": "thomas-hiddenpeak/Qwen3x-Orin",
+  "head_confirmed": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+  "frozen_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+  "inventory": [
+    {
+      "id": "O01",
+      "capability": "环境与资源预检",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "tools/evaluation/orin_perf_preflight.py",
+        "docs/REAL_MODEL_PERFORMANCE_POLICY.md"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/orin_perf_preflight.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md"
+      ],
+      "capability_summary": "tegrastats、CPU/process、GPU fd 所有权、冷热/频率/温度/后台活动；按测量协议给出可用/受干扰/证据不足。",
+      "thor_adaptation": "继承 v2；补完整采样窗口与归属，不能将驻留进程等同活跃竞争。"
+    },
+    {
+      "id": "O02",
+      "capability": "固定请求与输入身份",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "benchmarks/evalscope/README.md",
+        "tools/evaluation/build_evalscope_sharegpt_requests.py",
+        "tools/evaluation/validate_evalscope_triplet.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/benchmarks/evalscope/README.md",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/build_evalscope_sharegpt_requests.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+      ],
+      "capability_summary": "真实请求来源、tokenizer/chat template、token IDs/body hash、请求 ID、输出 token/结束原因，重复请求逐次对应。",
+      "thor_adaptation": "针对 Qwen3.8 重建有版本的工作量集，不能复制 Qwen3.6 token ID 或机械继承 33 请求数量。"
+    },
+    {
+      "id": "O03",
+      "capability": "可配置 warmup/多请求/独立重复",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "include/q3x/runtime/reference_benchmark.h",
+        "docs/REFERENCE_BENCHMARK.md"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md"
+      ],
+      "capability_summary": "round-major 多请求、warmup 与正式样本分开、原始每次结果、输出重复性检查。",
+      "thor_adaptation": "支持长短输入及不同输出长度、重复轮次；预先声明样本预算。"
+    },
+    {
+      "id": "O04",
+      "capability": "客户端与模型阶段时间",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "docs/REFERENCE_BENCHMARK.md",
+        "tools/evaluation/validate_whole_core_service.py",
+        "tools/reference/qwen36_27b_vllm_prefill.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_prefill.py"
+      ],
+      "capability_summary": "外部 TTFT/总耗时与引擎 Prefill/Decode、生成速率分别定义；短输出无 decode 数据时为空。",
+      "thor_adaptation": "用可访问的 vLLM 原生指标/受控观察提取，未知不能由客户端时间戳强拆。"
+    },
+    {
+      "id": "O05",
+      "capability": "逐 token 与分布统计",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "include/q3x/runtime/reference_benchmark.h",
+        "tools/evaluation/validate_evalscope_triplet.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+      ],
+      "capability_summary": "后续 token 时长及 count/min/median/p95/max、TTFT/TPOT 分位数/按请求长度分桶。",
+      "thor_adaptation": "保存真实 token 事件或核实每 chunk 恰一 token；否则 chunk 与 token 指标分列，不能混称。"
+    },
+    {
+      "id": "O06",
+      "capability": "内存水位和长时资源趋势",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "include/q3x/runtime/reference_benchmark.h",
+        "tools/evaluation/qualify_service.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+      ],
+      "capability_summary": "每次调用前后 CUDA 可用内存、持久下降、RSS/fd/thread、温度频率；有限 soak 与新进程复核。",
+      "thor_adaptation": "适配 Jetson 统一内存，区分采样峰值与瞬时峰值；建立可配置有限 soak 和恢复观测，勿照抄 Orin 内存阈值。"
+    },
+    {
+      "id": "O07",
+      "capability": "退出后资源恢复与 nvmap 诊断",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "tools/evaluation/run_target_aot_probe_with_nvmap.py",
+        "tools/evaluation/classify_target_aot_nvmap_recovery.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_target_aot_probe_with_nvmap.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/classify_target_aot_nvmap_recovery.py"
+      ],
+      "capability_summary": "认证已运行进程/二进制与父子观察，退出前后 nvmap 分配/孤儿/池保留，no_owner_leak 或 inconclusive。",
+      "thor_adaptation": "保留只读诊断；权限不足明确 capability gap，不通过清空系统池制造恢复。无需移植特定 AOT 核心。"
+    },
+    {
+      "id": "O08",
+      "capability": "实际执行路径/阶段 profile",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "include/q3x/runtime/reference_benchmark.h",
+        "docs/REAL_MODEL_PERFORMANCE_POLICY.md",
+        "tools/evaluation/run_vllm_p40_geometry.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py"
+      ],
+      "capability_summary": "NVTX 阶段范围、Graph replay/fallback、实际后端/配置/route计数、Nsight 内核耗时/调用和非 kernel 空隙。",
+      "thor_adaptation": "采集与基准计时分开；生产等价配置不可被 eager 形状样例替代。重叠 kernel 时间不能简单相加当请求占比。"
+    },
+    {
+      "id": "O09",
+      "capability": "服务版本多轮对照",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "tools/evaluation/compare_service_runs.py",
+        "tools/evaluation/validate_evalscope_triplet.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/compare_service_runs.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+      ],
+      "capability_summary": "B-C-C-B 独立进程、相同请求输出/usage、Prefill/Decode/TTFT 分别比较和失败校验。",
+      "thor_adaptation": "复用测量和身份校验；去掉必须提速或性能选型/推广门槛，差异与不确定性如实报告。"
+    },
+    {
+      "id": "O10",
+      "capability": "流完整性与请求边界观测",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "tools/evaluation/qualify_service.py",
+        "tools/evaluation/validate_whole_core_service.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py"
+      ],
+      "capability_summary": "SSE 完成/结束标志、usage、stream/nonstream、UTF-8 多语言、超限不截断、请求与内部 witness 绑定。",
+      "thor_adaptation": "在现有 API 上运行客户端与日志关联，验证测量有效性；不开发 API 服务。"
+    },
+    {
+      "id": "O11",
+      "capability": "取消/排队/慢读与恢复观测",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "tools/evaluation/qualify_service.py",
+        "tools/evaluation/validate_mtp_service.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py"
+      ],
+      "capability_summary": "prefill/decode 取消后恢复、慢 SSE 消费、活动+排队+过载、下一请求输出/健康与资源。",
+      "thor_adaptation": "只在专有临时等价实例执行压力/取消用例；按现有 vLLM 服务合同观测，不能强迫变成 Orin 的 1 active+1 queued+429。"
+    },
+    {
+      "id": "O12",
+      "capability": "MTP 与层边界诊断",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "tools/evaluation/validate_mtp_service.py",
+        "tools/reference/qwen36_27b_vllm_layers.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_layers.py"
+      ],
+      "capability_summary": "MTP target/draft/accepted/committed token 与时长计数；选层激活 hashes/统计/固定样本用于定位。",
+      "thor_adaptation": "观测已有 MTP 与选层实际输入；不实现新 MTP、层内算法或完整模型 oracle。模型精确输出差异需语义说明。"
+    },
+    {
+      "id": "O13",
+      "capability": "冷暖状态、加载及可复核交付",
+      "evidence_class": "implemented code / procedure; selected historical device records exist, not rerun by reviewer",
+      "source_paths": [
+        "docs/REFERENCE_BENCHMARK.md",
+        "tools/evaluation/run_vllm_p40_geometry.py",
+        "tools/evaluation/qualify_service.py"
+      ],
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py",
+        "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+      ],
+      "capability_summary": "进程启动/模型加载身份与状态、cache准备与实际命中语义、原始数据/遥测/版本/失败/退出码/离线复核。",
+      "thor_adaptation": "冷启动在专有实例测，主服务不重启；不能把相同请求自动视为冷缓存；所有结果有配置和证据。"
+    }
+  ],
+  "exclusions": [
+    "Engine/API/tokenizer/queue/cache/MTP implementation and optimized kernels: excluded by user; observe their current behavior only.",
+    "Fixed Qwen3.6 model/profile/layer counts/SM87 route certification are partner-engine-specific, not Thor acceptance fields.",
+    "Architecture winner search, promotion thresholds, kernel parameter sweeps and q20 speculative transaction simulator are optimization research, not probe parity.",
+    "98-question C-Eval capability publication and full generated-answer quality qualification are partner engine release tests; retain response/usage/token integrity and numeric probes, not an unrelated general-model evaluation product.",
+    "Roadmap-only 60K/130K capacity, target 2s/4s TTFT, indefinite/saturation reliability are not implemented parity targets."
+  ],
+  "cautions": [
+    "ReferenceBenchmark device-memory sampling is between invocations and explicitly not in-request peak memory.",
+    "Partner concurrency code tests bounded active/queued/overload recovery; it is not evidence of arbitrary concurrency-scale throughput support.",
+    "Two-hour historical soak has declared pacing and thermal stop limits; it is not maximum-load saturation qualification.",
+    "Scripts implement measured observability; retained project metadata is evidence reported by author, not an independent rerun in this review.",
+    "All probe capabilities require a current source-to-product matrix; unsupported may explain hardware readout absence, not unimplemented required tooling."
+  ]
+}

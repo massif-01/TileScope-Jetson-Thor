@@ -1,0 +1,18 @@
+{
+  "schema": "tilescope.parity.study.v1",
+  "hardware": "../evidence/parity/hardware/thor-01",
+  "calibration": "../evidence/parity/calibration/formal",
+  "trace": "../evidence/parity/trace/main",
+  "operator": "../evidence/v2/batches/validated",
+  "backend": "../evidence/v2/same-source/triton-pair-attempt1",
+  "service": [
+    "../evidence/parity/service/service-pilot",
+    "../evidence/parity/service/service-matrix",
+    "../evidence/parity/service/service-concurrent",
+    "../evidence/parity/service/service-comparison",
+    "../evidence/parity/service/service-soak"
+  ],
+  "trace_cache": "../evidence/parity/trace/cache",
+  "board": "../evidence/parity/hardware/board",
+  "calibration_support": "../evidence/parity/calibration"
+}

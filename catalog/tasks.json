@@ -1,0 +1,206 @@
+{
+  "schema": 2,
+  "tasks": [
+    {
+      "task_id": "fp8",
+      "adapter": "v1_fp8",
+      "rows": 64,
+      "groups": [
+        "baseline",
+        "quantized"
+      ],
+      "source": {
+        "kind": "derived_config",
+        "stage": "prefill-scale replay",
+        "evidence": "round2/evidence/model/identity.json",
+        "detail": "64 prompt tokens in API receipt; layer launch M not traced in v1."
+      }
+    },
+    {
+      "task_id": "nvfp4",
+      "adapter": "v1_nvfp4",
+      "rows": 64,
+      "groups": [
+        "baseline",
+        "quantized"
+      ],
+      "source": {
+        "kind": "derived_config",
+        "stage": "prefill-scale replay",
+        "evidence": "round2/evidence/model/identity.json",
+        "detail": "64 prompt tokens in API receipt; layer launch M not traced in v1."
+      }
+    },
+    {
+      "task_id": "rmsnorm-one-row",
+      "adapter": "gemma_rmsnorm",
+      "rows": 1,
+      "groups": [
+        "new",
+        "nongemm",
+        "edge"
+      ],
+      "source": {
+        "kind": "synthetic_diagnostic",
+        "stage": "one row, 5120 channels in a bounded 8192-lane reduction",
+        "evidence": "round2/evidence/model/config.json"
+      }
+    },
+    {
+      "task_id": "swiglu-tail",
+      "adapter": "swiglu",
+      "rows": 3,
+      "groups": [
+        "new",
+        "nongemm",
+        "edge"
+      ],
+      "source": {
+        "kind": "synthetic_diagnostic",
+        "stage": "three rows in a four-row activation tile",
+        "evidence": "round2/evidence/model/config.json"
+      }
+    },
+    {
+      "task_id": "bf16-ba-small",
+      "adapter": "bf16_ba",
+      "rows": 4,
+      "groups": [
+        "new",
+        "gemm",
+        "observed",
+        "edge"
+      ],
+      "source": {
+        "kind": "observed_runtime",
+        "stage": "decode_target_verify",
+        "evidence": "evidence/v2/observation/observed/summary.json",
+        "evidence_sha256": "0ca4309ff58ab63a758376f4a81d9f7e3e9f41883b35754e8287f0e57ba41a21",
+        "request_id": "tilescope-6dc49f04d024-64",
+        "step": 2,
+        "observation_key": [
+          "bf16_ba",
+          "decode_target_verify",
+          4
+        ],
+        "observed_module": "language_model.model.layers.0.linear_attn.in_proj_ba",
+        "prompt_token_hash": "4fd13fdd4550d147c4a522bd17a804813873cc9f5f68155e70baad4bf74c9a89",
+        "scheduled": 4,
+        "speculative_tokens": 3,
+        "detail": "Private eager vLLM target forward; shape/layout observed, activations synthesized. Production graph layout unconfirmed."
+      }
+    },
+    {
+      "task_id": "bf16-ba-medium",
+      "adapter": "bf16_ba",
+      "rows": 64,
+      "groups": [
+        "new",
+        "gemm",
+        "observed"
+      ],
+      "source": {
+        "kind": "observed_runtime",
+        "stage": "prefill",
+        "evidence": "evidence/v2/observation/observed/summary.json",
+        "evidence_sha256": "0ca4309ff58ab63a758376f4a81d9f7e3e9f41883b35754e8287f0e57ba41a21",
+        "request_id": "tilescope-6dc49f04d024-64",
+        "step": 1,
+        "observation_key": [
+          "bf16_ba",
+          "prefill",
+          64
+        ],
+        "observed_module": "language_model.model.layers.0.linear_attn.in_proj_ba",
+        "prompt_token_hash": "4fd13fdd4550d147c4a522bd17a804813873cc9f5f68155e70baad4bf74c9a89",
+        "scheduled": 64,
+        "speculative_tokens": 0,
+        "detail": "Private eager vLLM target forward; shape/layout observed, activations synthesized. Production graph layout unconfirmed."
+      }
+    },
+    {
+      "task_id": "bf16-ba-large",
+      "adapter": "bf16_ba",
+      "rows": 256,
+      "groups": [
+        "new",
+        "gemm",
+        "observed"
+      ],
+      "source": {
+        "kind": "observed_runtime",
+        "stage": "prefill",
+        "evidence": "evidence/v2/observation/observed/summary.json",
+        "evidence_sha256": "0ca4309ff58ab63a758376f4a81d9f7e3e9f41883b35754e8287f0e57ba41a21",
+        "request_id": "tilescope-6dc49f04d024-256",
+        "step": 8,
+        "observation_key": [
+          "bf16_ba",
+          "prefill",
+          256
+        ],
+        "observed_module": "language_model.model.layers.0.linear_attn.in_proj_ba",
+        "prompt_token_hash": "55e3f0258e6d1be20bef0b0be1afc98c1f0b392704069c17e51daaa43ef93c28",
+        "scheduled": 256,
+        "speculative_tokens": 0,
+        "detail": "Private eager vLLM target forward; shape/layout observed, activations synthesized. Production graph layout unconfirmed."
+      }
+    },
+    {
+      "task_id": "rmsnorm-regular",
+      "adapter": "gemma_rmsnorm",
+      "rows": 64,
+      "groups": [
+        "new",
+        "nongemm",
+        "observed"
+      ],
+      "source": {
+        "kind": "observed_runtime",
+        "stage": "prefill",
+        "evidence": "evidence/v2/observation/observed/summary.json",
+        "evidence_sha256": "0ca4309ff58ab63a758376f4a81d9f7e3e9f41883b35754e8287f0e57ba41a21",
+        "request_id": "tilescope-6dc49f04d024-64",
+        "step": 1,
+        "observation_key": [
+          "input_norm",
+          "prefill",
+          64
+        ],
+        "observed_module": "language_model.model.layers.0.input_layernorm",
+        "prompt_token_hash": "4fd13fdd4550d147c4a522bd17a804813873cc9f5f68155e70baad4bf74c9a89",
+        "scheduled": 64,
+        "speculative_tokens": 0,
+        "detail": "Private eager vLLM target forward; shape/layout observed, activations synthesized. Production graph layout unconfirmed."
+      }
+    },
+    {
+      "task_id": "swiglu-regular",
+      "adapter": "swiglu",
+      "rows": 64,
+      "groups": [
+        "new",
+        "nongemm",
+        "observed"
+      ],
+      "source": {
+        "kind": "observed_runtime",
+        "stage": "prefill",
+        "evidence": "evidence/v2/observation/observed/summary.json",
+        "evidence_sha256": "0ca4309ff58ab63a758376f4a81d9f7e3e9f41883b35754e8287f0e57ba41a21",
+        "request_id": "tilescope-6dc49f04d024-64",
+        "step": 1,
+        "observation_key": [
+          "mlp_gate",
+          "prefill",
+          64
+        ],
+        "observed_module": "language_model.model.layers.0.mlp.act_fn",
+        "prompt_token_hash": "4fd13fdd4550d147c4a522bd17a804813873cc9f5f68155e70baad4bf74c9a89",
+        "scheduled": 64,
+        "speculative_tokens": 0,
+        "detail": "Private eager vLLM target forward; shape/layout observed, activations synthesized. Production graph layout unconfirmed."
+      }
+    }
+  ]
+}

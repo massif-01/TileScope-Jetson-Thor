@@ -1,0 +1,22 @@
+{
+  "schema": "tilescope.engine.v1",
+  "engine_id": "llama-cpp",
+  "adapter": "llama_cpp.native.v1",
+  "primary_protocol": "llama_native_completion",
+  "chat_protocol": "existing_openai_chat",
+  "version_policy": "exact_observed_build_and_hook_semantics",
+  "launch_recipe": "upstream_llama_server",
+  "required_gpu_backend": "cuda",
+  "build_pin": "7fce5439fe451cd48340b112ec37d2befe02c776",
+  "binary_sha256": "9f462aac6a9eb75e8adeaa44df50cfacd93034ffc51efdd9dcf9f52088054810",
+  "libraries_sha256": {
+    "libggml-base.so.1.0.0": "6bd29782d6180cb85a41e49e5ae9f748d07f9ad210fe8d1de84b5ff691448cc1",
+    "libggml-cpu.so.1.0.0": "e56cb8b20d9d06e4b2b74643cac3eb4df20b97711443daae9df6b12d47890933",
+    "libggml-cuda.so.1.0.0": "8a803d321b5559ca0173d3bf8d53ff61ef8329aaf9b84a48a4d72feeddf8c070",
+    "libggml.so.1.0.0": "3e300253b4a663a8d0456c2a072872c2dcb09bce0b9ba34ce4c64e5b70e114f6",
+    "libllama-common.so.1.0.0": "55e87100009198c47dfc1544212fb402443ad8ed299ba07f44813e6e972a4b98",
+    "libllama.so.1.0.0": "3edfcff67b0dbf9e54e1a214f142ba2a629a9f22a04cd6f0e164497ef5d853b2",
+    "libmtmd.so.1.0.0": "64ecef4ded8850e6364f023ea004f0fd5e8e99aa53d1bfbdc891803c00b42c06",
+    "libllama-server-impl.so": "8b2dce77a2f810fd93dbe4848bc1782a6769f30a7bc53f886068d85a16cd8e3b"
+  }
+}

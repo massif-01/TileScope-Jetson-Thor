@@ -1,0 +1,24 @@
+{
+  "schema": "tilescope.target.v1",
+  "target_id": "T2",
+  "model_ref": "../models/qwen3-small.json",
+  "engine_ref": "../engines/vllm.json",
+  "deployment": {
+    "mode": "owned_instance",
+    "endpoint": "http://127.0.0.1:58352",
+    "served_model": "tilescope-qwen3-small",
+    "checkpoint": "/opt/tilescope/models/Qwen3-0.6B",
+    "runtime_executable": "/opt/tilescope/venv/bin/python",
+    "host_identity": "GPU-REPLACE-WITH-LOCAL-UUID",
+    "launch_parameters": {
+      "policy": "frozen_bounded_private_instance",
+      "tensor_parallel": 1,
+      "max_context": 2048,
+      "max_sequences": 2,
+      "memory_budget_bytes": 536870912,
+      "cache_policy": "off",
+      "gpu_layers": null
+    }
+  },
+  "identity_policy": "verified_local_artifact_and_process"
+}

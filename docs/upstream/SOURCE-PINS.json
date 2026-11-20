@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-19",
+  "references": [
+    {
+      "repository": "thomas-hiddenpeak/Qwen3x-Orin",
+      "commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc"
+    },
+    {
+      "repository": "thomas-hiddenpeak/thor-probe",
+      "commit": "481668514756b8decda421290c32dbbc130b897f"
+    },
+    {
+      "repository": "thomas-hiddenpeak/thor-gemm-bench",
+      "commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60"
+    }
+  ],
+  "scope": "Implemented probing and measurement capabilities at these commits; engine/API implementation and optimization excluded."
+}

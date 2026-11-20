@@ -1,0 +1,1686 @@
+[
+  {
+    "id": "H01.01",
+    "family": "H01",
+    "section": "hardware",
+    "item": "CUDA 身份与 PCI、CC、容量、SM",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/device_props.cpp"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/cuda/devices",
+      "hardware.json/devfreq_policy"
+    ]
+  },
+  {
+    "id": "H01.02",
+    "family": "H01",
+    "section": "hardware",
+    "item": "CUDA 线程、寄存器、共享内存、缓存、引擎及合作启动限制",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/device_props.cpp"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/cuda/devices",
+      "hardware.json/devfreq_policy"
+    ]
+  },
+  {
+    "id": "H02.01",
+    "family": "H02",
+    "section": "hardware",
+    "item": "逐核身份、拓扑、ISA 和在线状态",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/cpu/cpu_probe.cpp"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/cpu",
+      "telemetry.jsonl/sysfs/cpu_kHz"
+    ]
+  },
+  {
+    "id": "H02.02",
+    "family": "H02",
+    "section": "hardware",
+    "item": "逐级缓存容量、共享集合、当前/策略/硬件频率",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/cpu/cpu_probe.cpp"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/cpu",
+      "telemetry.jsonl/sysfs/cpu_kHz"
+    ]
+  },
+  {
+    "id": "H03.01",
+    "family": "H03",
+    "section": "hardware",
+    "item": "RAM 总量、可用量及可读取的物理类型",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/system/memory.cpp"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "固件 DMI 无 Type 17；真实容量可查，LPDDR 型号和理论峰值仅有规格参照。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/memory",
+      "telemetry.jsonl/sysfs/memory",
+      "hardware.json/specification_reference"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H03.02",
+    "family": "H03",
+    "section": "hardware",
+    "item": "内存位宽、带宽和 LPDDR 规格参照",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/system/memory.cpp"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "固件 DMI 无 Type 17；真实容量可查，LPDDR 型号和理论峰值仅有规格参照。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/memory",
+      "telemetry.jsonl/sysfs/memory",
+      "hardware.json/specification_reference"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H04.01",
+    "family": "H04",
+    "section": "hardware",
+    "item": "逐 PCI BDF 的链路速度、宽度及最大值",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/system/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/io"
+    ]
+  },
+  {
+    "id": "H04.02",
+    "family": "H04",
+    "section": "hardware",
+    "item": "网络接口、驱动、状态和标称速率",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/system/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/io"
+    ]
+  },
+  {
+    "id": "H04.03",
+    "family": "H04",
+    "section": "hardware",
+    "item": "DRM 输出、连接状态及模式",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/system/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/io"
+    ]
+  },
+  {
+    "id": "H05.01",
+    "family": "H05",
+    "section": "hardware",
+    "item": "FP16/BF16/INT8 MMA 数组精确校验",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=numeric",
+      "sass.gz",
+      "round2/evidence/runs/nvfp4-02/stdout"
+    ]
+  },
+  {
+    "id": "H05.02",
+    "family": "H05",
+    "section": "hardware",
+    "item": "FP8 E4M3 MMA、实际 SASS 和数值",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=numeric",
+      "sass.gz",
+      "round2/evidence/runs/nvfp4-02/stdout"
+    ]
+  },
+  {
+    "id": "H05.03",
+    "family": "H05",
+    "section": "v2",
+    "item": "NVFP4 真实投影与已执行指令",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+    ],
+    "implementation": "round2/probe.py",
+    "evidence": "evidence/v2/batches/validated",
+    "review": "python3 -m tilescope review evidence/v2/batches/validated",
+    "status": "verified",
+    "limit": "沿用 v2 真实 packed 投影、有限规模。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=numeric",
+      "sass.gz",
+      "round2/evidence/runs/nvfp4-02/stdout"
+    ]
+  },
+  {
+    "id": "H06.01",
+    "family": "H06",
+    "section": "hardware",
+    "item": "线程块 cluster 配置、驻留与跨 CTA 交换",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=warp|cluster",
+      "hardware.json/mechanism_inference",
+      "sass.gz"
+    ]
+  },
+  {
+    "id": "H06.02",
+    "family": "H06",
+    "section": "hardware",
+    "item": "grid/async fence 与 cp.async group smoke",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=warp|cluster",
+      "hardware.json/mechanism_inference",
+      "sass.gz"
+    ]
+  },
+  {
+    "id": "H06.03",
+    "family": "H06",
+    "section": "hardware",
+    "item": "warp shuffle、vote 和 ballot",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=warp|cluster",
+      "hardware.json/mechanism_inference",
+      "sass.gz"
+    ]
+  },
+  {
+    "id": "H06.04",
+    "family": "H06",
+    "section": "hardware",
+    "item": "TMEM 架构线索及容量证据等级",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=warp|cluster",
+      "hardware.json/mechanism_inference",
+      "sass.gz"
+    ]
+  },
+  {
+    "id": "H07.01",
+    "family": "H07",
+    "section": "hardware",
+    "item": "活动 warp 改变时固定依赖链的原始时间",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/deep_sm_probe.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=timing|chain_check|occupancy_api",
+      "summary.json/curves"
+    ]
+  },
+  {
+    "id": "H07.02",
+    "family": "H07",
+    "section": "hardware",
+    "item": "shared bank stride 曲线与推断边界",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/deep_sm_probe.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=timing|chain_check|occupancy_api",
+      "summary.json/curves"
+    ]
+  },
+  {
+    "id": "H07.03",
+    "family": "H07",
+    "section": "hardware",
+    "item": "L1 指针追逐/经验拐点与末地址验证",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/deep_sm_probe.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=timing|chain_check|occupancy_api",
+      "summary.json/curves"
+    ]
+  },
+  {
+    "id": "H07.04",
+    "family": "H07",
+    "section": "hardware",
+    "item": "不同 block/shared bytes 的 occupancy API 与编译寄存器",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/deep_sm_probe.cu"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "native.jsonl:type=timing|chain_check|occupancy_api",
+      "summary.json/curves"
+    ]
+  },
+  {
+    "id": "H08.01",
+    "family": "H08",
+    "section": "hardware",
+    "item": "NVENC 的 SDK、符号、节点与可读时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/media",
+      "telemetry.jsonl/sysfs/debugfs_clock_Hz"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H08.02",
+    "family": "H08",
+    "section": "hardware",
+    "item": "NVDEC 的 SDK、符号、节点与可读时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/media",
+      "telemetry.jsonl/sysfs/debugfs_clock_Hz"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H08.03",
+    "family": "H08",
+    "section": "hardware",
+    "item": "NVJPEG 的 SDK、符号、节点与可读时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/media",
+      "telemetry.jsonl/sysfs/debugfs_clock_Hz"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H08.04",
+    "family": "H08",
+    "section": "hardware",
+    "item": "PVA 的 SDK、符号、节点与可读时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/media",
+      "telemetry.jsonl/sysfs/debugfs_clock_Hz"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H08.05",
+    "family": "H08",
+    "section": "hardware",
+    "item": "OFA 的 SDK、符号、节点与可读时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/media",
+      "telemetry.jsonl/sysfs/debugfs_clock_Hz"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H08.06",
+    "family": "H08",
+    "section": "hardware",
+    "item": "ISP 的 SDK、符号、节点与可读时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/media",
+      "telemetry.jsonl/sysfs/debugfs_clock_Hz"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H08.07",
+    "family": "H08",
+    "section": "hardware",
+    "item": "VIC 的 SDK、符号、节点与可读时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/media",
+      "telemetry.jsonl/sysfs/debugfs_clock_Hz"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H09.01",
+    "family": "H09",
+    "section": "hardware",
+    "item": "CPU/GPU/EMC/媒体时钟与利用率、原样 tegrastats",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/telemetry/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "telemetry.jsonl",
+      "summary.json/telemetry_min_mean_max"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H09.02",
+    "family": "H09",
+    "section": "hardware",
+    "item": "RAM、LFB、温度与带轨名/单位的功率",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/telemetry/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "telemetry.jsonl",
+      "summary.json/telemetry_min_mean_max"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H09.03",
+    "family": "H09",
+    "section": "hardware",
+    "item": "重复时序、采样间隔与缺失读数",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/telemetry/"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "telemetry.jsonl",
+      "summary.json/telemetry_min_mean_max"
+    ],
+    "supplementary_evidence": "evidence/parity/hardware/board/board.json"
+  },
+  {
+    "id": "H10.01",
+    "family": "H10",
+    "section": "hardware",
+    "item": "T4000/T5000 参照及机器可查字段并列",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/probe_main.cpp",
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/communis/spec_reference.cpp",
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/schema/thor_probe_output.schema.json"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/specification_reference",
+      "summary.json/spec_comparison",
+      "summary.txt",
+      "plan.json"
+    ]
+  },
+  {
+    "id": "H10.02",
+    "family": "H10",
+    "section": "hardware",
+    "item": "text/JSON，定时长及多轮 sweep",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/probe_main.cpp",
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/communis/spec_reference.cpp",
+      "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/schema/thor_probe_output.schema.json"
+    ],
+    "implementation": "parity/hardware/README.md",
+    "evidence": "evidence/parity/hardware/thor-01",
+    "review": "python3 -m tilescope parity hardware review evidence/parity/hardware/thor-01 --json",
+    "status": "verified",
+    "limit": "传感器/接口缺项和规格推断按字段注明；单设备。",
+    "source_commit": "481668514756b8decda421290c32dbbc130b897f",
+    "fields": [
+      "hardware.json/specification_reference",
+      "summary.json/spec_comparison",
+      "summary.txt",
+      "plan.json"
+    ]
+  },
+  {
+    "id": "B01.01",
+    "family": "B01",
+    "section": "calibration",
+    "item": "BF16 输入，分别 FP32 与 BF16 输出",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "plan.json: format/shape; case stdout: input/output and SF, launch and reference"
+    ]
+  },
+  {
+    "id": "B01.02",
+    "family": "B01",
+    "section": "calibration",
+    "item": "双输入 block-scaled NVFP4，BF16 输出",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "plan.json: format/shape; case stdout: input/output and SF, launch and reference"
+    ]
+  },
+  {
+    "id": "B01.03",
+    "family": "B01",
+    "section": "calibration",
+    "item": "双输入 block-scaled NVFP4，FP4 输出和输出 scale",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "plan.json: format/shape; case stdout: input/output and SF, launch and reference"
+    ]
+  },
+  {
+    "id": "B01.04",
+    "family": "B01",
+    "section": "calibration",
+    "item": "合法 MNK、seed、预热和迭代、非方形及边界",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "plan.json: format/shape; case stdout: input/output and SF, launch and reference"
+    ]
+  },
+  {
+    "id": "B01.05",
+    "family": "B01",
+    "section": "library",
+    "item": "额外 cuBLASLt API 配置/heuristic 可见性",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration",
+    "evidence": "evidence/parity/calibration/library",
+    "review": "python3 -m parity.calibration.support_review --library evidence/parity/calibration/library --smoke evidence/parity/calibration/extra_smoke --out support-summary.json",
+    "status": "verified",
+    "limit": "十种描述符均建立，实测均无可用算法；仅限本机此库和这些配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "plan.json: format/shape; case stdout: input/output and SF, launch and reference"
+    ]
+  },
+  {
+    "id": "B01.06",
+    "family": "B01",
+    "section": "extra_smoke",
+    "item": "历史 CUDA Tile FP8 E5M2 等小矩阵 smoke",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration",
+    "evidence": "evidence/parity/calibration/extra_smoke",
+    "review": "python3 -m parity.calibration.support_review --library evidence/parity/calibration/library --smoke evidence/parity/calibration/extra_smoke --out support-summary.json",
+    "status": "verified",
+    "limit": "固定小矩阵数值探测。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "plan.json: format/shape; case stdout: input/output and SF, launch and reference"
+    ]
+  },
+  {
+    "id": "B02.01",
+    "family": "B02",
+    "section": "calibration",
+    "item": "独立数学参考；低精度表达与运算误差分开",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "case receipt, correctness, event samples and stdev; v2 error bound and negative case"
+    ]
+  },
+  {
+    "id": "B02.02",
+    "family": "B02",
+    "section": "calibration",
+    "item": "直接执行、捕获图后和计时后输出校验",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "case receipt, correctness, event samples and stdev; v2 error bound and negative case"
+    ]
+  },
+  {
+    "id": "B02.03",
+    "family": "B02",
+    "section": "calibration",
+    "item": "CUDA event 原样本，中位数/均值/波动与实测环境",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "case receipt, correctness, event samples and stdev; v2 error bound and negative case"
+    ]
+  },
+  {
+    "id": "B02.04",
+    "family": "B02",
+    "section": "v2gate",
+    "item": "max_abs 与整张量误差的数学一致性",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+    ],
+    "implementation": "tilescope/tasks.py",
+    "evidence": "evidence/parity/calibration/v2-error-summary.json",
+    "review": "python3 -m unittest discover -s tests -p test_parity_calibration.py",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "case receipt, correctness, event samples and stdev; v2 error bound and negative case"
+    ]
+  },
+  {
+    "id": "B03.01",
+    "family": "B03",
+    "section": "calibration",
+    "item": "配置批次、独立进程轮次与运行标识",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/benchmark_suite.py"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "per-round IDs + source SHA + pid + inputs; group aggregation from process stdout"
+    ]
+  },
+  {
+    "id": "B03.02",
+    "family": "B03",
+    "section": "calibration",
+    "item": "跨轮输入、编译身份与失败轮次过滤",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/benchmark_suite.py"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "per-round IDs + source SHA + pid + inputs; group aggregation from process stdout"
+    ]
+  },
+  {
+    "id": "B04.01",
+    "family": "B04",
+    "section": "calibration",
+    "item": "分组统计、状态过滤、CSV 和 LaTeX",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/analyze_results.py",
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/plot_results.py"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "groups.csv / groups.tex / scale.svg / rounds.svg rebuilt from raw events"
+    ]
+  },
+  {
+    "id": "B04.02",
+    "family": "B04",
+    "section": "calibration",
+    "item": "规模曲线和跨轮分组比较图",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/analyze_results.py",
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/plot_results.py"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "groups.csv / groups.tex / scale.svg / rounds.svg rebuilt from raw events"
+    ]
+  },
+  {
+    "id": "B05.01",
+    "family": "B05",
+    "section": "calibration",
+    "item": "实际功耗策略、频率与 governor 前后记录",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/scripts/run_isolated.sh"
+    ],
+    "implementation": "parity/calibration/run.py",
+    "evidence": "evidence/parity/calibration/formal",
+    "review": "python3 -m tilescope parity calibration-review --runs evidence/parity/calibration/formal --out my-calibration-report",
+    "status": "verified",
+    "limit": "单侧固定 CUTLASS 合成任务；合法参数域和本轮实测点见配置。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "conditions-before.json and conditions-after.json, proposed restoration readback"
+    ]
+  },
+  {
+    "id": "B05.02",
+    "family": "B05",
+    "section": "conditions",
+    "item": "显式条件合同与完整恢复方案 dry-run",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/scripts/run_isolated.sh"
+    ],
+    "implementation": "parity/calibration/conditions.py",
+    "evidence": "evidence/parity/calibration/condition-dry-run.json",
+    "review": "python3 -m parity.calibration.conditions --help",
+    "status": "verified",
+    "limit": "实际切换未执行。",
+    "source_commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+    "fields": [
+      "conditions-before.json and conditions-after.json, proposed restoration readback"
+    ]
+  },
+  {
+    "id": "O01.01",
+    "family": "O01",
+    "section": "handles",
+    "item": "进程、GPU 句柄和驻留归属；受限范围",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/orin_perf_preflight.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md"
+    ],
+    "implementation": "parity/handles.py",
+    "evidence": "evidence/parity/baseline/gpu-handles.json",
+    "review": "python3 -m tilescope parity handles --out new-handles.json",
+    "status": "verified",
+    "limit": "非特权查询记录拒绝访问，句柄存在不能证明竞争。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "holders, denied_processes, start_ticks and nodes"
+    ],
+    "supplementary_evidence": "evidence/parity/baseline/gpu-handles-system.json"
+  },
+  {
+    "id": "O01.02",
+    "family": "O01",
+    "section": "matrix",
+    "item": "时间窗口 CPU ticks、GPU 活动、温度和时钟",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/orin_perf_preflight.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-matrix",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-matrix --out matrix-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "sessions/*/resources.jsonl: mem, processes, cuda, nvml, temperatures_mC, gpc_hz"
+    ]
+  },
+  {
+    "id": "O01.03",
+    "family": "O01",
+    "section": "matrix",
+    "item": "并发/服务成功计数变化与干扰标记",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/orin_perf_preflight.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-matrix",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-matrix --out matrix-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "attempts/*/{before,after}.json: request_success_total, prompt_tokens_total, generation_tokens_total"
+    ]
+  },
+  {
+    "id": "O02.01",
+    "family": "O02",
+    "section": "pilot",
+    "item": "自建多语言文本与 tokenizer/template 版本、token ID",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/benchmarks/evalscope/README.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/build_evalscope_sharegpt_requests.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-pilot",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-pilot --out pilot-review.json",
+    "status": "verified",
+    "limit": "模板与实际输入均有记录；原生计数为窗口差分。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "inputs.json: source, text/token IDs, version; plan.json: identity.files"
+    ]
+  },
+  {
+    "id": "O02.02",
+    "family": "O02",
+    "section": "pilot",
+    "item": "请求 SHA、服务回显、响应 ID、每次唯一执行身份",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/benchmarks/evalscope/README.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/build_evalscope_sharegpt_requests.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-pilot",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-pilot --out pilot-review.json",
+    "status": "verified",
+    "limit": "模板与实际输入均有记录；原生计数为窗口差分。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "request.json, stream.jsonl (prompt echo), output.json and receipt.json per execution"
+    ]
+  },
+  {
+    "id": "O03.01",
+    "family": "O03",
+    "section": "matrix",
+    "item": "三档输入、两档输出、每格四请求三轮、轮前预热",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-matrix",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-matrix --out matrix-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "plan.json: round-major 6 scenarios, 4 formal cases, three rounds; separate warmups"
+    ]
+  },
+  {
+    "id": "O03.02",
+    "family": "O03",
+    "section": "matrix",
+    "item": "每请求原始结果、按请求重复性和按轮聚合",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-matrix",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-matrix --out matrix-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "per-run stream.jsonl and results.groups[].by_round, different_repeat_outputs"
+    ]
+  },
+  {
+    "id": "O03.03",
+    "family": "O03",
+    "section": "concurrent",
+    "item": "两种规模的独立并发 1/2 请求窗口",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-concurrent",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-concurrent --out concurrent-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "plan.waves[].concurrency, actual wall_start_ns/wall_end_ns and traffic.windows"
+    ]
+  },
+  {
+    "id": "O04.01",
+    "family": "O04",
+    "section": "matrix",
+    "item": "外部首可见输出、总时间、实际输出与速率",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_prefill.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-matrix",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-matrix --out matrix-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "receipt.start_ns/end_ns; stream first nonempty text, output_ids, usage"
+    ]
+  },
+  {
+    "id": "O04.02",
+    "family": "O04",
+    "section": "pilot",
+    "item": "原生引擎 queue/prefill/decode、实际计算 token 与速率",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_prefill.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-pilot",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-pilot --out pilot-review.json",
+    "status": "verified",
+    "limit": "模板与实际输入均有记录；原生计数为窗口差分。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "before/after: request_queue/prefill/decode_time_seconds count & sum; computed tokens"
+    ]
+  },
+  {
+    "id": "O04.03",
+    "family": "O04",
+    "section": "trace",
+    "item": "同一请求的真实调度分段、MTP target/draft 路径",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_prefill.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "engine-*.jsonl: scheduled, commit, target_dispatch, cuda_graph_replay; CUPTI kernel intervals"
+    ]
+  },
+  {
+    "id": "O05.01",
+    "family": "O05",
+    "section": "trace",
+    "item": "实际提交批次 ID、token 和时间，不均分同批 token",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "engine-*.jsonl: commit token_ids/time_ns linked to http/<request>.json"
+    ]
+  },
+  {
+    "id": "O05.02",
+    "family": "O05",
+    "section": "matrix",
+    "item": "首输出、TPOT、chunk 间隔、按长度桶的分布",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-matrix",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-matrix --out matrix-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "groups: chunk_gap_ms, ttfv_ms, client_tpot_ms, min/median/p95/max by condition"
+    ]
+  },
+  {
+    "id": "O05.03",
+    "family": "O05",
+    "section": "trace",
+    "item": "后续提交时间 count/min/median/P95/max",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "requests.observed.commit_interval_ms and batch_sizes"
+    ]
+  },
+  {
+    "id": "O06.01",
+    "family": "O06",
+    "section": "matrix",
+    "item": "窗口内 CPU/GPU 可用内存、RSS/fd/thread 与按请求水位",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-matrix",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-matrix --out matrix-review.json",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "sessions/*/resources.jsonl; resource_report.request_watermarks and process series"
+    ]
+  },
+  {
+    "id": "O06.02",
+    "family": "O06",
+    "section": "soak",
+    "item": "有限时长、速率、保护和分时段趋势",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-soak",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-soak --out soak-review.json",
+    "status": "verified",
+    "limit": "只代表有界低频负载的已观测时段。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "sessions/*/{start,end}.json; five_minute_request_bins and five_minute_bins"
+    ]
+  },
+  {
+    "id": "O06.03",
+    "family": "O06",
+    "section": "trace",
+    "item": "新进程与退出后的资源变化",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "shutdown.json, nvmap-{ready,after-3s}.json and nvmap-extended/*.json"
+    ]
+  },
+  {
+    "id": "O07.01",
+    "family": "O07",
+    "section": "trace",
+    "item": "自有进程身份、父子关系、打开时和退出后 nvmap owner",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_target_aot_probe_with_nvmap.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/classify_target_aot_nvmap_recovery.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "nvmap-before, ready, before-exit, after-* and shutdown.json"
+    ]
+  },
+  {
+    "id": "O07.02",
+    "family": "O07",
+    "section": "trace",
+    "item": "各堆分配、orphan、page pool 及恢复分类",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_target_aot_probe_with_nvmap.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/classify_target_aot_nvmap_recovery.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "nvmap-extended heap iovmm/fsi/vpr, orphan tables, pool pages, own handle tables"
+    ],
+    "supplementary_evidence": "evidence/parity/trace/cache"
+  },
+  {
+    "id": "O08.01",
+    "family": "O08",
+    "section": "pilot",
+    "item": "在线独占请求与引擎阶段、MTP 路径计数对应",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-pilot",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-pilot --out pilot-review.json",
+    "status": "verified",
+    "limit": "模板与实际输入均有记录；原生计数为窗口差分。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "pilot receipt / echoed IDs and single-request metrics deltas for actual scheduler and MTP"
+    ]
+  },
+  {
+    "id": "O08.02",
+    "family": "O08",
+    "section": "trace",
+    "item": "私有生产等价配置、真实 replay/dispatch 及 chunk/cache",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "plan.json + engine-*.jsonl: target_dispatch vs actual replay; scheduled chunks"
+    ],
+    "supplementary_evidence": "evidence/parity/trace/cache"
+  },
+  {
+    "id": "O08.03",
+    "family": "O08",
+    "section": "trace",
+    "item": "阶段范围、profile 开销样本、主要 kernel 次数与设备时间并集",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "profiles/ + actual request wall-clock bounds; startup, overhead, GPU launch correlation"
+    ]
+  },
+  {
+    "id": "O08.04",
+    "family": "O08",
+    "section": "trace",
+    "item": "未归类活动和窗口内无可见 kernel 的区间",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/include/q3x/runtime/reference_benchmark.h",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REAL_MODEL_PERFORMANCE_POLICY.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "gpu.kernels, category_by_kernel_sum, overlap_us and no_observed_gpu_kernel_us"
+    ]
+  },
+  {
+    "id": "O09.01",
+    "family": "O09",
+    "section": "comparison",
+    "item": "真实多进程 B-C-C-B 同部署比较",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/compare_service_runs.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-comparison",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-comparison --compare --out comparison-review.json",
+    "status": "verified",
+    "limit": "同版本、同服务进程、独立客户端窗口。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "plan.waves: B,C,C,B; unique client PIDs/session and executions"
+    ]
+  },
+  {
+    "id": "O09.02",
+    "family": "O09",
+    "section": "comparison",
+    "item": "同输入/usage/输出/cache、分阶段变化及不可比/证据不足",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/compare_service_runs.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-comparison",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-comparison --compare --out comparison-review.json",
+    "status": "verified",
+    "limit": "同版本、同服务进程、独立客户端窗口。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "comparison groups: per-phase values, actual cache hits, input/output SHA/usage, effect size"
+    ]
+  },
+  {
+    "id": "O09.03",
+    "family": "O09",
+    "section": "version_checks",
+    "item": "版本为声明对照因素、拒绝缺样本/条件不符",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/compare_service_runs.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_evalscope_triplet.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "tests/test_parity_service.py",
+    "review": "python3 -m unittest discover -s tests -p test_parity_service.py",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "real raw fixtures with annotated artificial negative/positive changes; no device inference from synthetic cases"
+    ]
+  },
+  {
+    "id": "O10.01",
+    "family": "O10",
+    "section": "pilot",
+    "item": "SSE UTF-8、结束标志、usage 与输入/输出 token 数",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-pilot",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-pilot --out pilot-review.json",
+    "status": "verified",
+    "limit": "模板与实际输入均有记录；原生计数为窗口差分。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "stream.jsonl: UTF-8 raw bytes, unique response, usage and [DONE]"
+    ]
+  },
+  {
+    "id": "O10.02",
+    "family": "O10",
+    "section": "trace",
+    "item": "多语言、stream/nonstream、usage 开关及结束原因",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "http/regular-stream, regular-nonstream, utf8-one, usage-disabled; over-capacity in supplement"
+    ]
+  },
+  {
+    "id": "O10.03",
+    "family": "O10",
+    "section": "trace",
+    "item": "采样成功、HTTP 拒绝、取消与残缺分列",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_whole_core_service.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "http/ cancellation records and queue-metrics.jsonl; completed and aborted receipts"
+    ],
+    "supplementary_evidence": "evidence/parity/trace/cache"
+  },
+  {
+    "id": "O11.01",
+    "family": "O11",
+    "section": "trace",
+    "item": "私有服务 prefill、decode 取消和下一次请求恢复",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "http/*cancel* and corresponding recovery, engine FINISHED_ABORTED"
+    ]
+  },
+  {
+    "id": "O11.02",
+    "family": "O11",
+    "section": "trace",
+    "item": "正常慢读合法 SSE；后续健康和资源",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "http/slow*; post-recovery health and successful next request"
+    ]
+  },
+  {
+    "id": "O11.03",
+    "family": "O11",
+    "section": "trace",
+    "item": "有限并发、实际排队/过载结果及下一请求健康",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "http/queue-* plus queue-metrics.jsonl running/waiting"
+    ]
+  },
+  {
+    "id": "O12.01",
+    "family": "O12",
+    "section": "trace",
+    "item": "实际 proposal/accept/target verify/commit 身份与计数",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_layers.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "observed.scheduled_draft_tokens, acceptance_counted_draft_tokens, accepted_before_stop, batch_sizes"
+    ]
+  },
+  {
+    "id": "O12.02",
+    "family": "O12",
+    "section": "trace",
+    "item": "选层真实数据局部重放、哈希/统计/固定小样本",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_layers.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "engine: selected_local_replay + supplemental selected_numerical_reference"
+    ],
+    "supplementary_evidence": "evidence/parity/trace/cache"
+  },
+  {
+    "id": "O12.03",
+    "family": "O12",
+    "section": "trace",
+    "item": "相同请求的执行形状/布局/融合证据与 v2 目录联系",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/validate_mtp_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/reference/qwen36_27b_vllm_layers.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "compiled-boundaries.json, model input shape/stride/dtype, selected actual norm/ba tensors and weight hashes"
+    ]
+  },
+  {
+    "id": "O13.01",
+    "family": "O13",
+    "section": "trace",
+    "item": "自有服务启动/加载/编译/capture、缓存与退出证据",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+    ],
+    "implementation": "parity/trace_review.py",
+    "evidence": "evidence/parity/trace/main",
+    "review": "python3 -m tilescope parity trace-review evidence/parity/trace/main",
+    "status": "verified",
+    "limit": "私有等价实例使用较小资源上限；采集开销与在线计时分开。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "server.stdout source identity, cache-seed.json and ready.json; startup digest"
+    ]
+  },
+  {
+    "id": "O13.02",
+    "family": "O13",
+    "section": "checkpoint",
+    "item": "checkpoint 索引/分片头/数据范围及 dtype 字节清单",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/q3x-inspect/main.cpp"
+    ],
+    "implementation": "parity/checkpoint.py",
+    "evidence": "evidence/parity/baseline/checkpoint-headers.json",
+    "review": "python3 -m tilescope parity checkpoint --out new-headers.json",
+    "status": "verified",
+    "limit": "头部检查与历史全文件 SHA 核对分别记录。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "shards: header_sha256, tensor_count, payload_bytes_by_dtype; index coverage"
+    ]
+  },
+  {
+    "id": "O13.03",
+    "family": "O13",
+    "section": "pilot",
+    "item": "失败保留、原始日志与普通电脑复算",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+    ],
+    "implementation": "parity/service_review.py",
+    "evidence": "evidence/parity/service/service-pilot",
+    "review": "python3 -m tilescope parity service-review evidence/parity/service/service-pilot --out pilot-review.json",
+    "status": "verified",
+    "limit": "模板与实际输入均有记录；原生计数为窗口差分。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "attempts, sessions, build/source hashes, stderr and published report receipts"
+    ]
+  },
+  {
+    "id": "O13.04",
+    "family": "O13",
+    "section": "independent",
+    "item": "观测器新目录还原及实际中断后恢复",
+    "source": [
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/docs/REFERENCE_BENCHMARK.md",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/run_vllm_p40_geometry.py",
+      "https://github.com/thomas-hiddenpeak/Qwen3x-Orin/blob/7aa0dd2b69a77807669650c4fcbdabd37498e4cc/tools/evaluation/qualify_service.py"
+    ],
+    "implementation": "evidence/parity/independent/procedure",
+    "evidence": "evidence/parity/independent",
+    "review": "see evidence/parity/independent/REPORT.md and procedure/offline_d12.py",
+    "status": "verified",
+    "limit": "实测范围与输入、窗口身份绑定。",
+    "source_commit": "7aa0dd2b69a77807669650c4fcbdabd37498e4cc",
+    "fields": [
+      "clean Mac/Thor, independent run receipts and exact restoration comparison"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "repository": "thomas-hiddenpeak/thor-gemm-bench",
+  "commit": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+  "files": [
+    {
+      "path": "benchmarks/bench_bf16_cutlass.cu",
+      "local": "parity/calibration/partner/bench_bf16_cutlass.cu",
+      "sha256": "00cd5f4c74794db4d0a3cb9887402344d330fd171b1ca1b5ea09adee4053be8c"
+    },
+    {
+      "path": "benchmarks/bench_nvfp4_fp4.cu",
+      "local": "parity/calibration/partner/bench_nvfp4_fp4.cu",
+      "sha256": "feea6a0ba5ecd1f4ee82dbb0d9231eba10b8585dfad6b65d0559a8b673993dc5"
+    },
+    {
+      "path": "benchmarks/bench_nvfp4_fp4_bf16.cu",
+      "local": "parity/calibration/partner/bench_nvfp4_fp4_bf16.cu",
+      "sha256": "0378341dfdc28967cfa3a4c13f49df02ec67f0be6a8cb19d6deec3b84149c4cf"
+    },
+    {
+      "path": "include/helper.h",
+      "local": "parity/calibration/partner/helper.h",
+      "sha256": "275527e7e3435c60ed932d2eafb123f9c90535dd4613dc85aeba3824f82d475d"
+    }
+  ],
+  "license": "BSD-3-Clause and full NVIDIA notices retained inside each vendored source file"
+}

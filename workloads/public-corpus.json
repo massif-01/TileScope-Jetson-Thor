@@ -1,0 +1,10 @@
+{
+  "schema": "tilescope.corpus.v1",
+  "version": "multimodel-public-text-20261120",
+  "texts": [
+    "A field engineer records a voltage measurement, its unit, the sensor location, and the time. Explain how another engineer can repeat this measurement and compare the two observations.",
+    "A laboratory runs the same calculation several times. The first run is slower than later runs. Describe what should be recorded before drawing a conclusion about the cause.",
+    "A device receives four short requests one after another. Explain the difference between the time until the first visible output and the time until the entire response is complete.",
+    "Two language models answer the same short question. Their tokenizers split the text differently. Explain why both the text and the actual token counts should be retained in a performance report."
+  ]
+}

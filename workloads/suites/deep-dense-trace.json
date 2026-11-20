@@ -1,0 +1,19 @@
+{
+  "schema": "tilescope.suite.v1",
+  "suite_id": "deep-dense",
+  "role": "diagnostic",
+  "required_capabilities": [
+    "model.standard_rmsnorm",
+    "model.dense_linear"
+  ],
+  "rows": 2,
+  "reference": "cpu_fp64",
+  "tolerances": {
+    "atol": 0.01,
+    "rtol": 0.02,
+    "relative_l2_max": 0.01,
+    "all_conditions_required": true
+  },
+  "profile": true,
+  "cancel": true
+}

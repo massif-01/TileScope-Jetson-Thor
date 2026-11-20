@@ -1,0 +1,38 @@
+{
+  "model.language_model.layers.0.linear_attn.in_proj_b.weight": {
+    "dtype": "BF16",
+    "shape": [
+      48,
+      5120
+    ],
+    "data_offsets": [
+      2543878656,
+      2544370176
+    ],
+    "sha256": "9694f11c0393c563dcbc8c1ba120c2eaebc36b200d6d19bf8761034acde4ac33"
+  },
+  "model.language_model.layers.0.linear_attn.in_proj_a.weight": {
+    "dtype": "BF16",
+    "shape": [
+      48,
+      5120
+    ],
+    "data_offsets": [
+      2543387136,
+      2543878656
+    ],
+    "sha256": "ff9e6d0a05fc85c2a61e5f73200d6778c84d76df3df2ce6c80e1e9a4c99c0ce1"
+  },
+  "model.language_model.layers.0.input_layernorm.weight": {
+    "dtype": "BF16",
+    "shape": [
+      5120
+    ],
+    "data_offsets": [
+      2543294784,
+      2543305024
+    ],
+    "sha256": "f38cf77635657f59a3f9d5c671a4a9388a143dead63d17f41ad60f6be5bfc040"
+  },
+  "rms_norm_eps": 1e-06
+}

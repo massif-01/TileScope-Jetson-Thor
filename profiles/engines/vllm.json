@@ -1,0 +1,11 @@
+{
+  "schema": "tilescope.engine.v1",
+  "engine_id": "vllm",
+  "adapter": "vllm.local.v1",
+  "primary_protocol": "vllm_completions",
+  "chat_protocol": "existing_openai_chat",
+  "version_policy": "exact_observed_build_and_hook_semantics",
+  "launch_recipe": "existing_vllm_cli",
+  "required_gpu_backend": "cuda",
+  "build_pin": "0.21.1rc1.dev104+g301d98647"
+}

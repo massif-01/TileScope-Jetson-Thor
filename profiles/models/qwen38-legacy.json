@@ -1,0 +1,31 @@
+{
+  "schema": "tilescope.model.v1",
+  "model_id": "qwen38-27b-nvfp4",
+  "display_name": "Qwen3.8-27B-NVFP4",
+  "origin": {
+    "kind": "local_checkpoint",
+    "identity_manifest": "SHA256SUMS-20260918.txt"
+  },
+  "expected_architectures": [
+    "Qwen3_5ForConditionalGeneration"
+  ],
+  "storage": {
+    "kind": "safetensors_sharded",
+    "sha256": {
+      "model.safetensors": "c473512c70eace07e2256fe9fd76596ac03e3295bee7d54cfb72676416afcc05",
+      "model_mtp.safetensors": "1d8268aa85ace093a561e3e7b63b9d390dac1cd55a90cd55b5ec509c3c9da9fe"
+    }
+  },
+  "precision": {
+    "description": "existing mixed NVFP4/FP8/BF16",
+    "derive_details_from_checkpoint": true
+  },
+  "tokenizer": {
+    "source": "checkpoint",
+    "template_source": "detect_and_hash"
+  },
+  "deep_adapter": {
+    "id": "qwen38_legacy.v1",
+    "rules": "preserve_baseline"
+  }
+}

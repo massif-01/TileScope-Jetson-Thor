@@ -1,0 +1,35 @@
+{
+  "schema": "tilescope.suite.v1",
+  "corpus_ref": "../public-corpus.json",
+  "input_mode": "raw_completion",
+  "sampling": {
+    "temperature": 0,
+    "seed": 381127,
+    "eos_policy": "respect_engine_eos_and_record_actual_output"
+  },
+  "required_capabilities": [
+    "request.complete",
+    "request.exact_token_counts",
+    "identity.local_target",
+    "engine.controlled_serial_phases",
+    "resources.window"
+  ],
+  "cache_policy": "freeze_per_target_and_record_actual_hits",
+  "formal_rules": {
+    "do_not_trim": true,
+    "do_not_merge_profile_runs": true
+  },
+  "suite_id": "new-target",
+  "input_tokens": [
+    128,
+    1024
+  ],
+  "max_output_tokens": [
+    16,
+    64
+  ],
+  "texts_per_cell": 2,
+  "rounds": 3,
+  "warmup_per_round": 1,
+  "expected_formal_requests": 24
+}

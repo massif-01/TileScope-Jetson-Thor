@@ -1,0 +1,13 @@
+__pycache__/
+.DS_Store
+/evidence/
+/round2/evidence/
+/acceptance/
+/runs/
+/local/
+/docs/goal/
+/docs/goal-parity/
+**/GPT-PRO-REVIEW.md
+*.bundle
+*.zip
+.env

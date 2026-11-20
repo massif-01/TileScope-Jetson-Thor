@@ -1,0 +1,54 @@
+{
+  "scope": "Synthetic calibration, one fixed native CUTLASS implementation per format, warm buffers, one GEMM per CUDA Graph, no model or Tile attribution",
+  "rounds": 1,
+  "seed": 42,
+  "warmup": 2,
+  "samples": 4,
+  "condition": {
+    "mode": "preserve",
+    "require_governor": null,
+    "require_power_mode_id": null
+  },
+  "cases": [
+    {
+      "format": "bf16-f32",
+      "shapes": [
+        [
+          8,
+          24,
+          8
+        ]
+      ]
+    },
+    {
+      "format": "bf16-bf16",
+      "shapes": [
+        [
+          8,
+          24,
+          8
+        ]
+      ]
+    },
+    {
+      "format": "nvfp4-bf16",
+      "shapes": [
+        [
+          128,
+          128,
+          64
+        ]
+      ]
+    },
+    {
+      "format": "nvfp4-fp4",
+      "shapes": [
+        [
+          128,
+          128,
+          64
+        ]
+      ]
+    }
+  ]
+}

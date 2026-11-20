@@ -1,0 +1,247 @@
+{
+  "review_date": "2026-11-19",
+  "pin_heads_current": true,
+  "capabilities": [
+    {
+      "id": "H01",
+      "capability": "GPU 属性与资源上限",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/gpu/device_props.cpp"
+      ],
+      "scope": "CUDA device properties/attributes queried; 单元数部分依赖规格映射",
+      "evidence_class": "queried+reference",
+      "limits": "当前 12 SM 设备重新查询，不能继承示例 20 SM",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/device_props.cpp"
+      ]
+    },
+    {
+      "id": "H02",
+      "capability": "CPU 身份、核心、特性、缓存与频率",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/cpu/cpu_probe.cpp"
+      ],
+      "scope": "proc/sysfs 读取；缓存主要读取 cpu0 条目",
+      "evidence_class": "queried",
+      "limits": "不是 CPU 吞吐或缓存延迟基准",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/cpu/cpu_probe.cpp"
+      ]
+    },
+    {
+      "id": "H03",
+      "capability": "系统内存身份与容量",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/system/memory.cpp"
+      ],
+      "scope": "容量读 MemTotal；类型/位宽/峰值带宽为固定规格",
+      "evidence_class": "queried+reference",
+      "limits": "273GB/s 不是实测带宽，不能套用未确认 SKU",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/system/memory.cpp"
+      ]
+    },
+    {
+      "id": "H04",
+      "capability": "PCIe、网卡、显示枚举",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/system/"
+      ],
+      "scope": "PCIe 端口速度/宽度、网卡驱动/声明速率、连接显示输出",
+      "evidence_class": "queried+reference",
+      "limits": "不等于网络/PCIe 实际吞吐；Gen5 标签写死，需保留原始单位",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/system/"
+      ]
+    },
+    {
+      "id": "H05",
+      "capability": "基本 GPU 数值能力与 kernel smoke",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/gpu/tc_probe_cu.cu"
+      ],
+      "scope": "FP16/BF16/FP8/INT8 有内核试运行；NVFP4 字段是 assumed",
+      "evidence_class": "executed+assumed",
+      "limits": "NVFP4 用已有真实执行证据；不同精度实际验证单列",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+      ]
+    },
+    {
+      "id": "H06",
+      "capability": "集群、异步/同步、warp 与 TMEM 能力",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/gpu/tc_probe_cu.cu"
+      ],
+      "scope": "cluster 属性、fence、shuffle/vote、cp.async group smoke；TMEM 推断",
+      "evidence_class": "queried+executed+inferred",
+      "limits": "cp.async group smoke 不可标完整 TMA 传输验证；TMEM 容量 unknown",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/tc_probe_cu.cu"
+      ]
+    },
+    {
+      "id": "H07",
+      "capability": "实验性 SM 微架构探测",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/gpu/deep_sm_probe.cu"
+      ],
+      "scope": "调度饱和、bank stride、L1 pointer chase、occupancy API、重复样本",
+      "evidence_class": "experimental+queried+reference",
+      "limits": "SM110 bank 实际回退固定规格，动态估计不可当硬件定论",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/gpu/deep_sm_probe.cu"
+      ]
+    },
+    {
+      "id": "H08",
+      "capability": "多媒体部件可见性与时钟",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/multimedia/"
+      ],
+      "scope": "NVENC/NVDEC/NVJPEG/PVA/OFA/ISP/VIC 的库/符号/节点与少量时钟",
+      "evidence_class": "queried+inferred+reference",
+      "limits": "不含真实视频/图像运算吞吐；SDK 缺失不是硅片不存在",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/multimedia/"
+      ]
+    },
+    {
+      "id": "H09",
+      "capability": "快照与持续遥测",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/telemetry/"
+      ],
+      "scope": "sysfs/tegrastats 合并；GPU/CPU/EMC/媒体时钟、温度、功率轨、RAM",
+      "evidence_class": "sampled",
+      "limits": "EMC百分比×频率不是有效 Mbps；0 与 unavailable 分开；轨名范围保留",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/tree/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/telemetry/"
+      ]
+    },
+    {
+      "id": "H10",
+      "capability": "规格对照与结构化输出",
+      "repo": "thor-probe",
+      "sha": "481668514756b8decda421290c32dbbc130b897f",
+      "paths": [
+        "src/thor_probe/src/probe_main.cpp"
+      ],
+      "scope": "T5000/T4000 reference 对照、text/JSON、重复样本/持续采集入口",
+      "evidence_class": "implemented",
+      "limits": "规格参照不代替设备身份；重复采集不能把 hardcoded 来源升级 dynamic",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-probe/blob/481668514756b8decda421290c32dbbc130b897f/src/thor_probe/src/probe_main.cpp"
+      ]
+    },
+    {
+      "id": "B01",
+      "capability": "固定实现的多规模 GEMM",
+      "repo": "thor-gemm-bench",
+      "sha": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+      "paths": [
+        "benchmarks/"
+      ],
+      "scope": "BF16→BF16、NVFP4→FP4、NVFP4→BF16；M/N/K/种子/预热/迭代 CLI",
+      "evidence_class": "implemented",
+      "limits": "输入FP4→输出BF16不等于BF16计算；BF16新基线作者尚未实机确认",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+      ]
+    },
+    {
+      "id": "B02",
+      "capability": "正确性与单次统计",
+      "repo": "thor-gemm-bench",
+      "sha": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+      "paths": [
+        "benchmarks/"
+      ],
+      "scope": "参考计算、结果校验、event 计时、均值/中位数/离散统计、环境版本",
+      "evidence_class": "implemented",
+      "limits": "不能迁移默认删上下5%样本、把 runtime 叫 toolkit、假定峰值",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-gemm-bench/tree/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/benchmarks/"
+      ]
+    },
+    {
+      "id": "B03",
+      "capability": "独立多次运行与配置批次",
+      "repo": "thor-gemm-bench",
+      "sha": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+      "paths": [
+        "tools/benchmark_suite.py"
+      ],
+      "scope": "N次进程执行、配置列表、跨次聚合与 JSON",
+      "evidence_class": "implemented",
+      "limits": "复用组织能力；需要拒绝失败run/混合身份，小N不能伪零不确定性",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/benchmark_suite.py"
+      ]
+    },
+    {
+      "id": "B04",
+      "capability": "结果整理导出与图表",
+      "repo": "thor-gemm-bench",
+      "sha": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+      "paths": [
+        "tools/analyze_results.py",
+        "tools/plot_results.py"
+      ],
+      "scope": "分组统计、状态过滤、CSV/LaTeX、规模曲线与分组比较图",
+      "evidence_class": "implemented",
+      "limits": "不复制自动择最快参数目标；排名不能混合不同语义",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/analyze_results.py",
+        "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/tools/plot_results.py"
+      ]
+    },
+    {
+      "id": "B05",
+      "capability": "运行条件控制与记录",
+      "repo": "thor-gemm-bench",
+      "sha": "0ca5f0d5b5270cea24e3540faf76a5e647b56c60",
+      "paths": [
+        "scripts/run_isolated.sh"
+      ],
+      "scope": "锁频/MAXN 包装及退出governor恢复",
+      "evidence_class": "implemented_with_side_effects",
+      "limits": "原脚本未完整恢复所有状态；保留当前共享设备策略，变更需明确授权",
+      "source_urls": [
+        "https://github.com/thomas-hiddenpeak/thor-gemm-bench/blob/0ca5f0d5b5270cea24e3540faf76a5e647b56c60/scripts/run_isolated.sh"
+      ]
+    }
+  ],
+  "excluded": [
+    "参数择优搜索（tile/cluster/SF/stage）",
+    "新手写PTX提速内核",
+    "legacy失败实验逐个移植",
+    "不存在的CPU/网络/媒体性能跑分项目",
+    "自动将当前设备切MAXN或更改共享服务"
+  ],
+  "not_transferred_claims": [
+    "作者示例20 SM设备的TFLOPS数字",
+    "未经实测的BF16新实现成绩",
+    "硬编码T5000规格",
+    "SDK可见性冒称真实媒体操作成功",
+    "经验微架构推断冒称硅片规格"
+  ]
+}

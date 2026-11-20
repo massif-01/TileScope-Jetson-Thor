@@ -1,0 +1,28 @@
+{
+  "schema": "tilescope.model.v1",
+  "model_id": "smollm2-1.7b-instruct-gguf-q4km",
+  "display_name": "SmolLM2-1.7B-Instruct GGUF Q4_K_M",
+  "origin": {
+    "kind": "huggingface",
+    "repo_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF",
+    "revision": "2d4a76a30b4af41ecd395c35725ac11688d4cfe4"
+  },
+  "storage": {
+    "kind": "gguf",
+    "weights": [
+      "smollm2-1.7b-instruct-q4_k_m.gguf"
+    ],
+    "sha256": {
+      "smollm2-1.7b-instruct-q4_k_m.gguf": "decd2598bc2c8ed08c19adc3c8fdd461ee19ed5708679d1c54ef54a5a30d4f33"
+    }
+  },
+  "precision": {
+    "quantization": "Q4_K_M",
+    "not_same_precision_as_hf_bf16": true
+  },
+  "tokenizer": {
+    "source": "gguf_engine",
+    "template_source": "engine_metadata_verified"
+  },
+  "deep_adapter": null
+}
